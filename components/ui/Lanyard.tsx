@@ -7,6 +7,13 @@ import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphe
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
+declare module '@react-three/fiber' {
+  interface ThreeElements {
+    meshLineGeometry: any;
+    meshLineMaterial: any;
+  }
+}
+
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 // 1x1 transparent pixel — lets useTexture be called unconditionally when a
@@ -116,11 +123,11 @@ function Band({
     dir = new THREE.Vector3();
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 } as any;
   const { nodes, materials } = useGLTF('/assets/lanyard/card.glb') as any;
-  const texture = useTexture(lanyardImage || '/assets/lanyard/lanyard.png');
+  const texture = useTexture(lanyardImage || '/assets/lanyard/lanyard.png') as THREE.Texture;
   // useTexture must be called unconditionally; use a blank pixel when an image
   // isn't supplied for a given face, then skip compositing it below.
-  const frontTex = useTexture(frontImage || BLANK_PIXEL);
-  const backTex = useTexture(backImage || BLANK_PIXEL);
+  const frontTex = useTexture(frontImage || BLANK_PIXEL) as THREE.Texture;
+  const backTex = useTexture(backImage || BLANK_PIXEL) as THREE.Texture;
 
   // Composite the front/back images into the card's texture atlas (front = left
   // half, back = right half). Each image is drawn aspect-preserving (no stretch).
@@ -263,7 +270,9 @@ function Band({
         </RigidBody>
       </group>
       <mesh ref={band}>
+        {/* @ts-ignore */}
         <meshLineGeometry />
+        {/* @ts-ignore */}
         <meshLineMaterial
           color="white"
           depthTest={false}
