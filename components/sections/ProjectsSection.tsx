@@ -78,15 +78,21 @@ export default function ProjectsSection() {
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = "hidden";
+      // @ts-ignore
+      if (typeof window !== 'undefined' && window.lenis) { window.lenis.stop(); }
       // focus modal for accessibility
       setTimeout(() => {
         modalRef.current?.focus();
       }, 0);
     } else {
       document.body.style.overflow = "unset";
+      // @ts-ignore
+      if (typeof window !== 'undefined' && window.lenis) { window.lenis.start(); }
     }
     return () => {
       document.body.style.overflow = "unset";
+      // @ts-ignore
+      if (typeof window !== 'undefined' && window.lenis) { window.lenis.start(); }
     };
   }, [selectedProject]);
 
@@ -218,6 +224,7 @@ export default function ProjectsSection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
+              data-lenis-prevent
               className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0a0a0a] rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 z-10 flex flex-col hide-scrollbar"
             >
               <button
