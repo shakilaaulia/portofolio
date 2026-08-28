@@ -152,7 +152,7 @@ export default function ProjectsSection() {
               key={project.id}
               onClick={() => setSelectedProject(project)}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="text-left group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-[80vw] md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
+              className="text-left group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-full md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
             >
               {/* Mockup Image */}
               <div className="relative aspect-[4/3] w-full bg-black/5 dark:bg-white/5 overflow-hidden">
