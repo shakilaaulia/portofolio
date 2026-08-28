@@ -12,6 +12,19 @@ export default function ContactSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const subject = `Pesan dari ${name} (Portofolio)`;
+    const body = `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+    
+    window.location.href = `mailto:shakila.aulianurrul@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -70,11 +83,11 @@ export default function ContactSection() {
               </div>
               
               <div ref={(el) => { elementsRef.current[2] = el; }} className="flex flex-col gap-6">
-                <a href="mailto:hello@example.com" className="flex items-center gap-4 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors group w-fit">
+                <a href="mailto:shakila.aulianurrul@gmail.com" className="flex items-center gap-4 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors group w-fit">
                   <div className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center group-hover:border-neon-blue group-hover:text-neon-blue transition-colors">
                     <EnvelopeSimple size={24} />
                   </div>
-                  <span className="text-lg font-medium">hello@example.com</span>
+                  <span className="text-lg font-medium">shakila.aulianurrul@gmail.com</span>
                 </a>
                 <div className="flex items-center gap-4 text-black/70 dark:text-white/70">
                   <div className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center">
@@ -87,21 +100,27 @@ export default function ContactSection() {
 
             {/* Right Form */}
             <div className="flex-1 lg:max-w-md w-full relative z-10">
-              <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div ref={(el) => { elementsRef.current[3] = el; }} className="flex flex-col md:flex-row gap-6">
                   <input 
                     type="text" 
+                    name="name"
+                    required
                     placeholder="Name" 
                     className="w-full bg-white/40 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-xl px-6 py-4 outline-none text-black dark:text-white focus:border-neon-blue focus:shadow-[0_0_15px_rgba(255,106,0,0.2)] transition-all placeholder:text-black/30 dark:placeholder:text-white/30"
                   />
                   <input 
                     type="email" 
+                    name="email"
+                    required
                     placeholder="Email" 
                     className="w-full bg-white/40 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-xl px-6 py-4 outline-none text-black dark:text-white focus:border-neon-blue focus:shadow-[0_0_15px_rgba(255,106,0,0.2)] transition-all placeholder:text-black/30 dark:placeholder:text-white/30"
                   />
                 </div>
                 
                 <textarea 
+                  name="message"
+                  required
                   ref={(el) => { elementsRef.current[4] = el; }}
                   placeholder="Tell me about your project" 
                   rows={5}
@@ -109,6 +128,7 @@ export default function ContactSection() {
                 ></textarea>
                 
                 <button 
+                  type="submit"
                   ref={(el) => { elementsRef.current[5] = el; }}
                   className="w-full bg-black text-white dark:bg-white dark:text-black font-bold text-lg rounded-xl px-6 py-5 flex items-center justify-center gap-3 hover:bg-neon-blue hover:text-white dark:hover:text-black hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,106,0,0.4)] transition-all duration-300 group"
                 >

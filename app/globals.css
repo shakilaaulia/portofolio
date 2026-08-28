@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 80%;
+}
+
 :root {
   --background: #fff5f0;
   --foreground: #2a110a;

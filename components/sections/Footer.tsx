@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { LinkedinLogo, GithubLogo, TwitterLogo, DribbbleLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, GithubLogo, TwitterLogo, DribbbleLogo, InstagramLogoIcon } from "@phosphor-icons/react";
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -65,17 +65,14 @@ export default function Footer() {
           <div>
             <h4 className="text-black dark:text-white font-bold mb-6 tracking-wider uppercase text-xs opacity-70">Let's Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#0A66C2] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(10,102,194,0.5)] transition-all duration-300">
+              <a href="www.linkedin.com/in/shakilaaulianr" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#0A66C2] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(10,102,194,0.5)] transition-all duration-300">
                 <LinkedinLogo size={24} weight="fill" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#000000] dark:hover:bg-[#ffffff] hover:text-white dark:hover:text-black hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-300">
+              <a href="https://github.com/shakilaaulia" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#000000] dark:hover:bg-[#ffffff] hover:text-white dark:hover:text-black hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,0,0,0.5)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-300">
                 <GithubLogo size={24} weight="fill" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#1DA1F2] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(29,161,242,0.5)] transition-all duration-300">
-                <TwitterLogo size={24} weight="fill" />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#EA4C89] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(234,76,137,0.5)] transition-all duration-300">
-                <DribbbleLogo size={24} weight="fill" />
+              <a href="https://www.instagram.com/shakilaauliaa/" className="w-12 h-12 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-black/70 dark:text-white/70 hover:bg-[#1DA1F2] hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(29,161,242,0.5)] transition-all duration-300">
+                <InstagramLogoIcon size={24} weight="fill" />
               </a>
             </div>
           </div>
@@ -84,11 +81,9 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/10 dark:border-white/10 gap-4">
           <p className="text-black/40 dark:text-white/40 text-xs font-medium">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Shakila Aulia
           </p>
           <div className="flex gap-6 text-xs font-medium text-black/40 dark:text-white/40">
-            <a href="#" className="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-black dark:hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
 

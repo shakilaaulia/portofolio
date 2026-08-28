@@ -44,8 +44,8 @@ const featuredProjects = [
   },
   {
     id: "04",
-    title: "Seblak Mamah Zahwa",
-    category: "Aplikasi UMKM",
+    title: "Web Order UMKM Food",
+    category: "Final Project",
     image: "/images/project-umkm.png",
     tags: ["React", "Node.js", "Supabase"],
     description: "Aplikasi pemesanan seblak khusus UMKM yang dibangun menggunakan teknologi modern. Aplikasi ini menggunakan React untuk frontend, Node.js untuk backend, dan Supabase sebagai solusi basis datanya.",
@@ -58,7 +58,7 @@ const featuredProjects = [
     id: "05",
     title: "Dealan",
     category: "Ride Hailing App (Microservice)",
-    image: "/images/project-1.png", // Fallback image, please upload project-dealan.png
+    image: "/images/project-dealan.png", 
     tags: ["Go", "Docker", "AWS", "Jenkins", "Azure"],
     description: "Aplikasi ride-hailing canggih dengan konsep arsitektur microservices dan integrasi cloud. Proyek ini dibangun dengan bahasa Go, memanfaatkan kontainer Docker, diotomatisasi melalui Jenkins, serta menggunakan layanan cloud seperti AWS dan Azure.",
     links: {

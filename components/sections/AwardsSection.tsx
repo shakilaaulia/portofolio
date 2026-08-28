@@ -8,17 +8,17 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 const awardsAndCertifications = [
   {
     id: 1,
-    title: "BINUS Certification",
-    issuer: "Bina Nusantara (BINUS)",
-    date: "2024",
+    title: "Finalist Impreuneur",
+    issuer: "BINUS Malang",
+    date: "2026",
     image: "/images/sertfikat-binus.png",
     link: "https://drive.google.com/drive/folders/1i6C3uiaqOYSwTVYs_iMfA-XLRNdEurMe?usp=drive_link",
   },
   {
     id: 2,
-    title: "NSC Certification",
+    title: "2nd Winner NSC Bussines Plan",
     issuer: "NSC",
-    date: "2024",
+    date: "2026",
     image: "/images/sertifikat-nsc.png",
     link: "https://drive.google.com/drive/folders/1i6C3uiaqOYSwTVYs_iMfA-XLRNdEurMe?usp=drive_link",
   },

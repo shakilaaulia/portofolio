@@ -45,7 +45,7 @@ const experiences = [
     role: "UI/UX Designer",
     company: "PT. Safanesia Indonesia",
     period: "2024",
-    desc: "Designed wireframes and prototypes for a Wi-Fi billing site, increasing navigation efficiency by 20%, and collaborated with two developers to ensure 100% accurate code implementation."
+    desc: "Designed wireframes and prototypes for a Wi-Fi billing site and collaborated with two developers to ensure code implementation."
   }
 ];
 
@@ -160,11 +160,11 @@ export default function ExperienceSection() {
       </div>
       <AccordionGallery
         items={[
-          { image: '/images/gallery-1.jpg', label: 'Tech Stack' },
-          { image: '/images/gallery-2.jpg', label: 'Creative' },
-          { image: '/images/gallery-3.jpg', label: 'Design' },
-          { image: '/images/gallery-4.jpg', label: 'Development' },
-          { image: '/images/gallery-5.jpg', label: 'Innovation' }
+          { image: '/images/gallery-1.jpg', label: 'Teaching Assistant' },
+          { image: '/images/gallery-2.jpg', label: 'Social Impact Policy Division' },
+          { image: '/images/gallery-3.jpg', label: 'BEM KEMAKOM' },
+          { image: '/images/gallery-4.jpg', label: 'KSE UPI' },
+          { image: '/images/gallery-5.jpg', label: 'KSE UPI' }
         ]}
         defaultIndex={2}
         expandRatio={0.5}
