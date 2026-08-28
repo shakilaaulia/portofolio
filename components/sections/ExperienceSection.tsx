@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 import BorderGlow from "../BorderGlow";
 import dynamic from 'next/dynamic';
 
-const DomeGallery = dynamic(() => import('@/components/ui/DomeGallery'), { ssr: false });
+const AccordionGallery = dynamic(() => import('@/components/ui/AccordionGallery'), { ssr: false });
 
 const experiences = [
   {
@@ -154,8 +154,24 @@ export default function ExperienceSection() {
       </div>
     </section>
 
-    <section ref={galleryRef} className="w-full h-[120vh] min-h-[800px] relative z-10 mt-12 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]">
-      <DomeGallery fit={0.85} overlayBlurColor="transparent" grayscale={false} />
+    <section ref={galleryRef} className="w-full max-w-6xl mx-auto py-24 px-6 relative z-10">
+      <div className="mb-12 text-center">
+        <h3 className="text-3xl font-bold text-black/90 dark:text-white/90">Moments & Highlights</h3>
+      </div>
+      <AccordionGallery
+        items={[
+          { image: '/images/gallery-1.jpg', label: 'Tech Stack' },
+          { image: '/images/gallery-2.jpg', label: 'Creative' },
+          { image: '/images/gallery-3.jpg', label: 'Design' },
+          { image: '/images/gallery-4.jpg', label: 'Development' },
+          { image: '/images/gallery-5.jpg', label: 'Innovation' }
+        ]}
+        defaultIndex={2}
+        expandRatio={0.5}
+        trigger="hover"
+        accentColor="#ff6a00"
+        height={500}
+      />
     </section>
     </div>
   );
