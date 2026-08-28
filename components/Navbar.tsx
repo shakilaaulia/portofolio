@@ -97,7 +97,7 @@ export default function Navbar() {
             className="w-full glass-nav rounded-full px-6 py-4 flex items-center justify-between shadow-2xl shadow-black/10 dark:shadow-black/50"
           >
             <div className="font-bold text-xl tracking-tight text-foreground relative group cursor-pointer">
-              <span className="text-neon-blue group-hover:animate-pulse-glow">A</span>G
+              <span className="text-neon-blue group-hover:animate-pulse-glow">S</span>A
             </div>
 
             <nav className="hidden md:flex items-center gap-2">

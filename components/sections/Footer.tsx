@@ -45,7 +45,7 @@ export default function Footer() {
           
           <div className="lg:col-span-2">
             <div className="font-bold text-3xl tracking-tight text-black dark:text-white mb-6">
-              <span className="text-neon-blue">A</span>G
+              <span className="text-neon-blue">S</span>A
             </div>
             <p className="text-black/50 dark:text-white/50 max-w-sm leading-relaxed text-sm">
               Bridging the gap between technology, creativity, and user experience to build meaningful digital solutions.
