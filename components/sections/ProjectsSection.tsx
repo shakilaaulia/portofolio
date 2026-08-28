@@ -15,6 +15,7 @@ const featuredProjects = [
     category: "UI/UX Design",
     image: "/images/project-delta.png",
     tags: ["Figma", "Wireframing", "Prototyping"],
+    description: "Proyek desain UI/UX untuk aplikasi Deltanet, yang merupakan sistem billing Wi-Fi. Desain ini mencakup pembuatan wireframe dan prototipe interaktif untuk memastikan navigasi dan pengalaman pengguna yang optimal.",
     links: {
       figma: "https://www.figma.com/design/cQanoAyeyKEVfTGWol9NRj/PKL---Wifi-Net-Bill.?m=auto&t=Oik1JYiEPK0SOveA-6"
     }
@@ -25,6 +26,7 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-schedular.png",
     tags: ["Laravel", "PHP", "Web"],
+    description: "Aplikasi manajemen penjadwalan (Schedular) berbasis web yang dikembangkan menggunakan framework Laravel. Dirancang untuk memudahkan pengelolaan agenda dan waktu secara efisien.",
     links: {
       github: "https://github.com/shakilaaulia/schedular_laravel"
     }
@@ -35,6 +37,7 @@ const featuredProjects = [
     category: "Collaboration Project",
     image: "/images/project-adopt.png",
     tags: ["Collab", "Web", "Application"],
+    description: "Platform AdoptMeow merupakan proyek kolaborasi yang bertujuan untuk mewadahi proses adopsi kucing. Platform ini mempertemukan hewan yang membutuhkan rumah dengan para calon adopter yang bertanggung jawab.",
     links: {
       github: "https://github.com/shakilaaulia/AdoptMeow-Collab"
     }
@@ -45,6 +48,7 @@ const featuredProjects = [
     category: "Aplikasi UMKM",
     image: "/images/project-umkm.png",
     tags: ["React", "Node.js", "Supabase"],
+    description: "Aplikasi pemesanan seblak khusus UMKM yang dibangun menggunakan teknologi modern. Aplikasi ini menggunakan React untuk frontend, Node.js untuk backend, dan Supabase sebagai solusi basis datanya.",
     links: {
       github: "https://github.com/shakilaaulia/seblak-web",
       demo: "https://seblakmamahzahwa.vercel.app/"
@@ -55,7 +59,8 @@ const featuredProjects = [
     title: "Dealan",
     category: "Ride Hailing App (Microservice)",
     image: "/images/project-1.png", // Fallback image, please upload project-dealan.png
-    tags: ["Go", "Docker", "AWS", "Jenkins"],
+    tags: ["Go", "Docker", "AWS", "Jenkins", "Azure"],
+    description: "Aplikasi ride-hailing canggih dengan konsep arsitektur microservices dan integrasi cloud. Proyek ini dibangun dengan bahasa Go, memanfaatkan kontainer Docker, diotomatisasi melalui Jenkins, serta menggunakan layanan cloud seperti AWS dan Azure.",
     links: {
       github: "https://github.com/shakilaaulia/Dealan",
       demo: "https://dealan-app.vercel.app/"
@@ -236,22 +241,19 @@ export default function ProjectsSection() {
                   <h3 className="text-3xl md:text-4xl font-bold text-black/90 dark:text-white/90">{selectedProject.title}</h3>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tags.map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 text-xs font-medium text-black/70 dark:text-white/70">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4">
+                  <p>{selectedProject.description}</p>
                 </div>
                 
-                <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4">
-                  <p>
-                    {/* Dummy Content */}
-                    Proyek ini merupakan representasi dari dedikasi dan keterampilan dalam membangun solusi digital yang efektif. Melalui pendekatan yang mendalam terhadap riset pengguna dan kebutuhan sistem, setiap elemen dirancang untuk memberikan pengalaman yang mulus dan intuitif.
-                  </p>
-                  <p>
-                    Teknologi mutakhir diimplementasikan untuk memastikan keamanan, skalabilitas, dan performa yang optimal. Jelajahi detail teknis dan hasil karya ini melalui tautan yang tersedia di bawah ini.
-                  </p>
+                <div className="mt-2">
+                  <h5 className="text-sm font-bold text-black/80 dark:text-white/80 mb-3">Tech Stack:</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tags.map((tag: string) => (
+                      <span key={tag} className="px-3 py-1.5 rounded-md bg-black/5 dark:bg-white/10 text-xs font-semibold text-black/80 dark:text-white/80 border border-black/10 dark:border-white/10">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="pt-6 mt-4 border-t border-black/10 dark:border-white/10 flex flex-wrap gap-4">

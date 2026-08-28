@@ -139,8 +139,8 @@ export default function HeroSection() {
           <a href="#contact" className="px-8 py-3 rounded-full bg-neon-blue text-black font-semibold hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,106,0,0.6)] transition-all">
             Contact Me
           </a>
-          <a href="/cv.pdf" target="_blank" className="px-8 py-3 rounded-full border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold hover:border-neon-blue hover:text-neon-blue transition-all backdrop-blur-sm">
-            Download My CV
+          <a href="https://drive.google.com/file/d/1fxwfk8Jhdt2_aNAhVZhYNlqpM6rRc8og/view?usp=drive_link" target="_blank" className="px-8 py-3 rounded-full border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold hover:border-neon-blue hover:text-neon-blue transition-all backdrop-blur-sm">
+            View My CV
           </a>
         </div>
       </div>
