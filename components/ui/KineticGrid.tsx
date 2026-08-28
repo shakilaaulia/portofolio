@@ -155,8 +155,8 @@ export default function KineticGrid({
       const theme = {
         default: {
           bg: "transparent",
-          lineActive: { r: 0, g: 240, b: 255, a: 0.9 },
-          nodeActive: { r: 0, g: 240, b: 255, a: 1.0 },
+          lineActive: { r: 255, g: 106, b: 0, a: 0.9 },
+          nodeActive: { r: 255, g: 106, b: 0, a: 1.0 },
           glow: "255,106,0",
           ripple: "255,106,0",
         },
