@@ -81,6 +81,7 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-center">
         
         <div ref={introRef} className="lg:col-span-7 flex flex-col justify-center">
+          <h3 className="text-4xl font-bold text-black/90 dark:text-white/90">All Bout Me</h3>
           <h2 className="text-xs font-bold tracking-[0.2em] text-neon-blue mb-8 uppercase">About Me</h2>
           <p className="text-3xl md:text-5xl font-medium leading-[1.1] mb-10 text-black/90 dark:text-white/90">
             I’m a Computer Science student with a strong passion for technology and digital product development.

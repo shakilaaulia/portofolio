@@ -18,8 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Futuristic Portfolio",
-  description: "A premium futuristic personal portfolio",
+  title: "Shakila's Portfolio",
 };
 
 export default function RootLayout({
