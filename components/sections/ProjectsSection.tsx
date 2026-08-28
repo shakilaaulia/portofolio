@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight, ArrowSquareOut, X } from "@phosphor-icons/react";
+import { SiFigma, SiGithub } from "react-icons/si";
+import { AnimatePresence, motion } from "framer-motion";
 
 const featuredProjects = [
   {
@@ -13,7 +15,9 @@ const featuredProjects = [
     category: "UI/UX Design",
     image: "/images/project-delta.png",
     tags: ["Figma", "Wireframing", "Prototyping"],
-    link: "https://www.figma.com/design/cQanoAyeyKEVfTGWol9NRj/PKL---Wifi-Net-Bill.?m=auto&t=Oik1JYiEPK0SOveA-6"
+    links: {
+      figma: "https://www.figma.com/design/cQanoAyeyKEVfTGWol9NRj/PKL---Wifi-Net-Bill.?m=auto&t=Oik1JYiEPK0SOveA-6"
+    }
   },
   {
     id: "02",
@@ -21,7 +25,9 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-schedular.png",
     tags: ["Laravel", "PHP", "Web"],
-    link: "https://github.com/shakilaaulia/schedular_laravel"
+    links: {
+      github: "https://github.com/shakilaaulia/schedular_laravel"
+    }
   },
   {
     id: "03",
@@ -29,7 +35,9 @@ const featuredProjects = [
     category: "Collaboration Project",
     image: "/images/project-adopt.png",
     tags: ["Collab", "Web", "Application"],
-    link: "https://github.com/shakilaaulia/AdoptMeow-Collab"
+    links: {
+      github: "https://github.com/shakilaaulia/AdoptMeow-Collab"
+    }
   },
   {
     id: "04",
@@ -37,7 +45,10 @@ const featuredProjects = [
     category: "Aplikasi UMKM",
     image: "/images/project-umkm.png",
     tags: ["React", "Node.js", "Supabase"],
-    link: "https://seblakmamahzahwa.vercel.app/"
+    links: {
+      github: "https://github.com/shakilaaulia/seblak-web",
+      demo: "https://seblakmamahzahwa.vercel.app/"
+    }
   },
   {
     id: "05",
@@ -45,14 +56,18 @@ const featuredProjects = [
     category: "Ride Hailing App (Microservice)",
     image: "/images/project-1.png", // Fallback image, please upload project-dealan.png
     tags: ["Go", "Docker", "AWS", "Jenkins"],
-    link: "https://dealan-app.vercel.app/"
+    links: {
+      github: "https://github.com/shakilaaulia/Dealan",
+      demo: "https://dealan-app.vercel.app/"
+    }
   }
 ];
 
 export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLElement | null)[]>([]);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -117,13 +132,11 @@ export default function ProjectsSection() {
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {featuredProjects.map((project, index) => (
-            <a
+            <button
               key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => setSelectedProject(project)}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-[80vw] md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
+              className="text-left group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-[80vw] md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
             >
               {/* Mockup Image */}
               <div className="relative aspect-[4/3] w-full bg-black/5 dark:bg-white/5 overflow-hidden">
@@ -155,7 +168,7 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -166,6 +179,88 @@ export default function ProjectsSection() {
           display: none;
         }
       `}} />
+
+      {/* Project Detail Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0a0a0a] rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 z-10 flex flex-col hide-scrollbar"
+            >
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors text-black dark:text-white"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="w-full aspect-video bg-black/5 dark:bg-white/5 relative overflow-hidden shrink-0">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="p-8 md:p-10 flex flex-col gap-6 shrink-0">
+                <div>
+                  <span className="text-sm font-mono text-neon-blue mb-2 block">{selectedProject.id} • {selectedProject.category}</span>
+                  <h3 className="text-3xl md:text-4xl font-bold text-black/90 dark:text-white/90">{selectedProject.title}</h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.tags.map((tag: string) => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 text-xs font-medium text-black/70 dark:text-white/70">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4">
+                  <p>
+                    {/* Dummy Content */}
+                    Proyek ini merupakan representasi dari dedikasi dan keterampilan dalam membangun solusi digital yang efektif. Melalui pendekatan yang mendalam terhadap riset pengguna dan kebutuhan sistem, setiap elemen dirancang untuk memberikan pengalaman yang mulus dan intuitif.
+                  </p>
+                  <p>
+                    Teknologi mutakhir diimplementasikan untuk memastikan keamanan, skalabilitas, dan performa yang optimal. Jelajahi detail teknis dan hasil karya ini melalui tautan yang tersedia di bawah ini.
+                  </p>
+                </div>
+                
+                <div className="pt-6 mt-4 border-t border-black/10 dark:border-white/10 flex flex-wrap gap-4">
+                  {selectedProject.links?.figma && (
+                    <a href={selectedProject.links.figma} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F24E1E]/10 text-[#F24E1E] hover:bg-[#F24E1E]/20 transition-colors font-medium text-sm">
+                      <SiFigma size={18} />
+                      View on Figma
+                    </a>
+                  )}
+                  {selectedProject.links?.github && (
+                    <a href={selectedProject.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-black dark:text-white transition-colors font-medium text-sm border border-black/10 dark:border-white/10">
+                      <SiGithub size={18} />
+                      View on GitHub
+                    </a>
+                  )}
+                  {selectedProject.links?.demo && (
+                    <a href={selectedProject.links.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neon-blue/10 text-neon-blue hover:bg-neon-blue/20 transition-colors font-medium text-sm">
+                      <ArrowSquareOut size={18} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
