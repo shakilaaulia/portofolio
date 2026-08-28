@@ -9,51 +9,43 @@ import { ArrowRight } from "@phosphor-icons/react";
 const featuredProjects = [
   {
     id: "01",
-    title: "PROJECT ALPHA",
-    category: "Fullstack Web Application",
-    image: "/images/project-1.png",
-    tags: ["TypeScript", "Next.js", "Tailwind"],
-    link: "#"
+    title: "Deltanet Wireframe",
+    category: "UI/UX Design",
+    image: "/images/project-delta.png",
+    tags: ["Figma", "Wireframing", "Prototyping"],
+    link: "https://www.figma.com/design/cQanoAyeyKEVfTGWol9NRj/PKL---Wifi-Net-Bill.?m=auto&t=Oik1JYiEPK0SOveA-6"
   },
   {
     id: "02",
-    title: "PROJECT BETA",
-    category: "Interactive Dashboard",
-    image: "/images/project-2.png",
-    tags: ["React", "GSAP", "Node.js"],
-    link: "#"
+    title: "Schedular",
+    category: "Web Application",
+    image: "/images/project-schedular.png",
+    tags: ["Laravel", "PHP", "Web"],
+    link: "https://github.com/shakilaaulia/schedular_laravel"
   },
   {
     id: "03",
-    title: "PROJECT GAMMA",
-    category: "AI Data Platform",
-    image: "/images/project-3.png",
-    tags: ["Python", "FastAPI", "Vue.js"],
-    link: "#"
+    title: "AdoptMeow",
+    category: "Collaboration Project",
+    image: "/images/project-adopt.png",
+    tags: ["Collab", "Web", "Application"],
+    link: "https://github.com/shakilaaulia/AdoptMeow-Collab"
   },
   {
     id: "04",
-    title: "PROJECT DELTA",
-    category: "E-Commerce Experience",
-    image: "/images/project-1.png",
-    tags: ["Next.js", "Stripe", "Framer Motion"],
-    link: "#"
+    title: "Seblak Mamah Zahwa",
+    category: "Aplikasi UMKM",
+    image: "/images/project-umkm.png",
+    tags: ["React", "Node.js", "Supabase"],
+    link: "https://seblakmamahzahwa.vercel.app/"
   },
   {
     id: "05",
-    title: "PROJECT EPSILON",
-    category: "Creative Agency Site",
-    image: "/images/project-2.png",
-    tags: ["Three.js", "GSAP", "WebGL"],
-    link: "#"
-  },
-  {
-    id: "06",
-    title: "PROJECT ZETA",
-    category: "Mobile First FinTech App",
-    image: "/images/project-3.png",
-    tags: ["React Native", "Expo", "Firebase"],
-    link: "#"
+    title: "Dealan",
+    category: "Ride Hailing App (Microservice)",
+    image: "/images/project-1.png", // Fallback image, please upload project-dealan.png
+    tags: ["Go", "Docker", "AWS", "Jenkins"],
+    link: "https://dealan-app.vercel.app/"
   }
 ];
 
@@ -111,7 +103,7 @@ export default function ProjectsSection() {
               Building <span className="font-light italic text-neon-blue">meaningful</span> digital experiences
             </h3>
           </div>
-          <a href="#" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white uppercase group whitespace-nowrap">
+          <a href="https://github.com/shakilaaulia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white uppercase group whitespace-nowrap">
             View All Projects
             <ArrowRight size={16} className="transform transition-transform group-hover:translate-x-1" />
           </a>
@@ -128,6 +120,8 @@ export default function ProjectsSection() {
             <a
               key={project.id}
               href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               ref={(el) => { cardsRef.current[index] = el; }}
               className="group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-[80vw] md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
             >
