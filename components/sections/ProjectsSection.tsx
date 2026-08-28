@@ -68,10 +68,15 @@ export default function ProjectsSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLElement | null)[]>([]);
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = "hidden";
+      // focus modal for accessibility
+      setTimeout(() => {
+        modalRef.current?.focus();
+      }, 0);
     } else {
       document.body.style.overflow = "unset";
     }
@@ -194,18 +199,20 @@ export default function ProjectsSection() {
       {/* Project Detail Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" onClick={() => setSelectedProject(null)}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedProject(null)}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             />
             <motion.div
+              ref={modalRef}
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0a0a0a] rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 z-10 flex flex-col hide-scrollbar"
             >
               <button
