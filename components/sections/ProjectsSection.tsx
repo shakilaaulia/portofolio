@@ -69,6 +69,17 @@ export default function ProjectsSection() {
   const cardsRef = useRef<(HTMLElement | null)[]>([]);
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProject]);
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
