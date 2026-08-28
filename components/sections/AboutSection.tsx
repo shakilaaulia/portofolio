@@ -38,40 +38,59 @@ export default function AboutSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
+    // Intro & Visual
+    const tlIntro = gsap.timeline({
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%",
-        end: "bottom bottom",
+        trigger: introRef.current,
+        start: "top 80%",
         toggleActions: "play none none reverse",
       }
     });
 
-    tl.fromTo(
+    tlIntro.fromTo(
       introRef.current?.children ? Array.from(introRef.current.children) : [],
       { opacity: 0, y: 40 },
       { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: "power2.out" }
-    );
-
-    tl.fromTo(
+    ).fromTo(
       visualRef.current,
       { opacity: 0, scale: 0.95 },
       { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
       "-=0.5"
     );
 
-    tl.fromTo(
+    // Education
+    gsap.fromTo(
       educationRef.current,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.4"
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: educationRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        }
+      }
     );
 
-    tl.fromTo(
+    // What I Can Do (Services)
+    gsap.fromTo(
       servicesRef.current?.children ? Array.from(servicesRef.current.children) : [],
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.6, ease: "power2.out" },
-      "-=0.4"
+      { 
+        opacity: 1, 
+        y: 0, 
+        stagger: 0.15, 
+        duration: 0.6, 
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        }
+      }
     );
   }, []);
 
