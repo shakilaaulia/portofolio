@@ -25,7 +25,7 @@ const featuredProjects = [
     title: "Schedular",
     category: "Web Application",
     image: "/images/project-schedular.png",
-    tags: ["Laravel", "PHP", "Web"],
+    tags: ["Laravel", "PHP"],
     description: "Aplikasi manajemen penjadwalan (Schedular) berbasis web yang dikembangkan menggunakan framework Laravel. Dirancang untuk memudahkan pengelolaan agenda dan waktu secara efisien.",
     links: {
       github: "https://github.com/shakilaaulia/schedular_laravel"
@@ -34,21 +34,21 @@ const featuredProjects = [
   {
     id: "03",
     title: "AdoptMeow",
-    category: "Collaboration Project",
+    category: "Web Application",
     image: "/images/project-adopt.png",
-    tags: ["Collab", "Web", "Application"],
-    description: "Platform AdoptMeow merupakan proyek kolaborasi yang bertujuan untuk mewadahi proses adopsi kucing. Platform ini mempertemukan hewan yang membutuhkan rumah dengan para calon adopter yang bertanggung jawab.",
+    tags: ["React", "Node"],
+    description: "Platform AdoptMeow merupakan proyek yang bertujuan untuk mewadahi proses adopsi kucing. Platform ini mempertemukan hewan yang membutuhkan rumah dengan para calon adopter yang bertanggung jawab.",
     links: {
       github: "https://github.com/shakilaaulia/AdoptMeow-Collab"
     }
   },
   {
     id: "04",
-    title: "Web Order UMKM Food",
-    category: "Final Project",
+    title: "Seblak Mamah Zahwa - Web Ordering System",
+    category: "Web Application",
     image: "/images/project-umkm.png",
-    tags: ["React", "Node.js", "Supabase"],
-    description: "Aplikasi pemesanan seblak khusus UMKM yang dibangun menggunakan teknologi modern. Aplikasi ini menggunakan React untuk frontend, Node.js untuk backend, dan Supabase sebagai solusi basis datanya.",
+    tags: ["React.js", "Node.js", "Supabase", "Vercel"],
+    description: "Sistem pemesanan makanan berbasis web untuk UMKM Seblak Mamah Zahwa. Dirancang untuk mendigitalisasi proses reservasi dan pemesanan menu secara real-time, mempermudah manajemen transaksi, serta memberikan pengalaman pengguna yang responsif.",
     links: {
       github: "https://github.com/shakilaaulia/seblak-web",
       demo: "https://seblakmamahzahwa.vercel.app/"
@@ -57,14 +57,22 @@ const featuredProjects = [
   {
     id: "05",
     title: "Dealan",
-    category: "Ride Hailing App (Microservice)",
+    category: "Web Application",
     image: "/images/project-dealan.png", 
     tags: ["Go", "Docker", "AWS", "Jenkins", "Azure"],
-    description: "Aplikasi ride-hailing canggih dengan konsep arsitektur microservices dan integrasi cloud. Proyek ini dibangun dengan bahasa Go, memanfaatkan kontainer Docker, diotomatisasi melalui Jenkins, serta menggunakan layanan cloud seperti AWS dan Azure.",
+    description: "Aplikasi ride-hailing dengan konsep arsitektur microservices dan integrasi cloud. Proyek ini dibangun dengan bahasa Go, menggunakan database postgre, memanfaatkan kontainer Docker, diotomatisasi melalui Jenkins, serta menggunakan layanan cloud Azure.",
     links: {
       github: "https://github.com/shakilaaulia/Dealan",
       demo: "https://dealan-app.vercel.app/"
     }
+  },
+  {
+    id: "06",
+    title: "Analisis Pola Bahan Makanan Kemasan (Algoritma Apriori)",
+    category: "Machine Learning",
+    image: "/images/project-ml.png", 
+    tags: ["R", "Apriori"],
+    description: "Penerapan Algoritma Apriori untuk mengidentifikasi pola hubungan dan kombinasi korelasi antara bahan utama serta Bahan Tambahan Pangan (BTP) pada produk makanan kemasan menggunakan aturan asosiasi."
   }
 ];
 
