@@ -151,7 +151,7 @@ export default function HeroSection() {
           <span className="text-[10px] tracking-widest text-black/50 dark:text-white/50 uppercase font-medium">Years Experience</span>
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-5xl font-bold text-neon-pink drop-shadow-[0_0_10px_rgba(255,0,85,0.5)] dark:drop-shadow-[0_0_10px_rgba(255,0,85,0.8)]">30+</span>
+          <span className="text-5xl font-bold text-neon-pink drop-shadow-[0_0_10px_rgba(255,0,85,0.5)] dark:drop-shadow-[0_0_10px_rgba(255,0,85,0.8)]">5+</span>
           <span className="text-[10px] tracking-widest text-black/50 dark:text-white/50 uppercase font-medium">Projects Done</span>
         </div>
         <div className="flex flex-col gap-1">
@@ -167,8 +167,6 @@ export default function HeroSection() {
               <span className="text-sm font-medium tracking-widest text-black/70 dark:text-white/70">FULL STACK DEVELOPER</span>
               <span className="text-neon-blue text-xs">✦</span>
               <span className="text-sm font-medium tracking-widest text-black/70 dark:text-white/70">WEB DESIGNER</span>
-              <span className="text-neon-pink text-xs">✦</span>
-              <span className="text-sm font-medium tracking-widest text-black/70 dark:text-white/70">ANIMATION SPECIALIST</span>
               <span className="text-neon-purple text-xs">✦</span>
               <span className="text-sm font-medium tracking-widest text-black/70 dark:text-white/70">UI/UX INNOVATION</span>
               <span className="text-neon-blue text-xs">✦</span>

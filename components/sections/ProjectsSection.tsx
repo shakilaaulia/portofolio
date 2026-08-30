@@ -30,10 +30,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-schedular.png",
     tags: ["Laravel", "PHP"],
-    description: "A web-based scheduling management tool developed using the Laravel framework to efficiently organize agendas and time.",
+    description: "As the full-stack developer, I designed and implemented an end-to-end learning schedule and agenda management platform for educators — streamlining class scheduling, lesson planning, and digital record-keeping to replace manual reporting and eliminate scheduling conflicts.",
     details: {
-      businessImpact: "Developed a web-based scheduling tool for small-to-medium teams, cutting manual coordination time by ~30% and providing real-time conflict detection.",
-      technicalDetails: "Implemented in Laravel 9 with a MySQL backend, featuring RESTful APIs, server-side validation, and a Vue.js front-end for dynamic calendar interactions."
+      businessImpact: "• Automated Schedule & Conflict Resolution: Architected a smart class scheduling workflow that prevents double-booking across teachers, classes, and time slots, significantly reducing administrative overhead for school coordinators.\n\n• Structured Lesson Agenda Tracking: Streamlined daily teaching logs and agenda recording, enabling educators to document subject materials, competencies, and student attendance digitally in a centralized, audit-ready database.\n\n• Operational Transparency & Governance: Established a standardized reporting framework with granular access control, giving school administrators and principals real-time visibility into teaching progress and agenda compliance.\n\n• Data Consistency & Paperless Workflow: Digitized traditional paper-based teaching logs, minimizing human recording errors, ensuring data historical integrity, and accelerating end-of-term evaluation processes.",
+      technicalDetails: "Built a robust full-stack web application from scratch using Laravel, implementing clean MVC architecture, dynamic scheduling algorithms, secure authentication, and relational data management.\n\n• Role-Based Access Control (RBAC): Implemented granular middleware authorization (Admin / Teacher / Principal) using Laravel Authentication and Policies to secure route access and ensure data isolation per educator.\n\n• Dynamic Conflict-Free Scheduling Engine: Developed optimized Eloquent query algorithms with multi-parameter validation (time, classroom, subject, teacher availability) to validate and generate schedule matrix seamlessly.\n\n• Digital Agenda & Attendance Recording Module: Built rich form interfaces with Eloquent ORM relationships for logging daily teaching topics, learning outcomes, and student attendance with auto-timestamping and status tracking.\n\n• Reporting & Export Pipeline: Engineered automated report generation modules allowing administrators to filter, query, and export structured teaching activity logs into PDF and Excel formats for formal auditing.\n\n• Database Schema Optimization: Designed normalized MySQL database schemas with foreign keys, indexes, and soft deletes to maintain data integrity and optimize query performance for large activity logs."
     },
     links: {
       github: "https://github.com/shakilaaulia/schedular_laravel"
@@ -45,10 +45,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-adopt.png",
     tags: ["React", "Node"],
-    description: "A collaborative pet-adoption platform that connects animals needing homes with responsible adopters.",
+    description: "As the Project Lead, I drove the product design and user flow architecture for a pet adoption platform crafting intuitive end-to-end application journeys, streamlining shelter-to-adopter verification, and establishing structured adoption governance.",
     details: {
-      businessImpact: "Launched a collaborative pet-adoption platform that connects shelters with potential adopters, increasing successful placements by 20% in the first quarter.",
-      technicalDetails: "Powered by a Node.js/Express API, PostgreSQL, and a React front-end; real-time notifications are handled via Socket.io."
+      businessImpact: "• Adoption Workflow & Verification: Designed a multi-stage pet adoption process—including prospective adopter screening, background verification, and adoption status tracking—reducing adoption approval lead times while ensuring pet safety.\n\n• Shelter & Community Engagement: Built features for shelters and pet owners to manage pet profiles, medical history logs, and availability status, creating a centralized ecosystem for pet care awareness.\n\n• Location-Based Discovery & Matching: Structured criteria-based filtering (breed, age, health status, location proximity) to improve matching accuracy between adopters and pets needing homes.\n\n• Data Transparency & Record Governance: Digitized adoption history and medical tracking logs, replacing fragmented communication with a centralized, auditable record system.",
+      technicalDetails: "Built a full-stack pet adoption platform from scratch to production, handling real-time data filtering, secure media uploads, authorization workflows, and scalable API architecture.\n\n• Role-Separated Authorization: Implemented role-based access control (Adopter / Shelter Admin) using middleware guards to enforce strict permission separation across APIs and dashboard routes.\n\n• Multi-Criteria Search & Filtering Engine: Developed optimized database queries and spatial filtering algorithms to deliver real-time pet matching based on location, medical status, and pet traits.\n\n• Media Upload & Storage Pipeline: Built a secure image processing and cloud storage pipeline for pet photos and health certificate documents, optimizing image delivery for mobile and web views.\n\n• Adoption Request Management Pipeline: Implemented state-machine logic to handle adoption status transitions (Pending Review, Interview, Approved, Adopted) with real-time status notifications for applicants.\n\n• RESTful API & Database Architecture: Designed normalized relational database schemas and RESTful endpoints to ensure smooth data synchronization and seamless UI state updates."
     },
     links: {
       github: "https://github.com/shakilaaulia/AdoptMeow-Collab"
@@ -60,10 +60,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-umkm.png",
     tags: ["React.js", "Node.js", "Supabase", "Vercel"],
-    description: "A real-time web-based food ordering system for a local UMKM to digitalize reservations and menu ordering.",
+    description: "As the Project Manager, I led the end-to-end execution and delivery of a POS and inventory management system for operations coordinating cross-functional development, ensuring milestone alignment, and transforming manual bookkeeping into an efficient digital ecosystem.",
     details: {
-      businessImpact: "Delivered an end-to-end online ordering system for a local UMKM, enabling a 40% sales uplift and expanding the customer base beyond the physical store.",
-      technicalDetails: "Frontend built with React 18 and Tailwind CSS, backend with Supabase (PostgreSQL + Auth). Integrated Stripe for secure payments."
+      businessImpact: "• Operational Digitalization & Error Elimination: Replaced paper-based tracking with a unified POS workflow, eliminating manual calculation errors and accelerating daily checkout transaction times.\n\n• Inventory Governance & Stock Traceability: Designed a real-time stock management pipeline that tracks raw material and product movement, preventing stockouts and reducing material waste.\n\n• Financial Transparency & Revenue Auditing: Structured automated daily revenue aggregation and margin analytics, providing business owners with instant visibility into cash flow, top-selling items, and profit metrics.\n\n• Standardized Multi-User Access: Established distinct permission boundaries for cashiers and store owners to secure transaction records and prevent unauthorized inventory modifications.",
+      technicalDetails: "Built a full-stack POS and inventory platform from scratch, optimizing transaction handling, database relations, offline-resilient operations, and dynamic reporting.\n\n• Transaction Processing Engine: Implemented a lightweight checkout engine capable of handling fast cart state management, dynamic discount calculations, and instant digital/printed receipt generation.\n\n• Relational Inventory & Auto-Deduction Pipeline: Engineered database triggers and ORM listeners to automatically adjust stock balances in real-time upon completed checkout transactions.\n\n• Role-Based Authorization & Session Guard: Implemented secure user authentication and middleware guards to enforce strict functional segregation between Cashier operational views and Admin financial dashboards.\n\n• Reporting & Analytics Engine: Developed dynamic query aggregation modules to generate daily, weekly, and monthly sales summaries with exportable financial reports (PDF/Excel).\n\n• Optimized Database Schema: Structured normalized database tables with foreign key constraints, indexing, and soft-delete capabilities to preserve historical transaction audit trails."
     },
     links: {
       github: "https://github.com/shakilaaulia/seblak-web",
@@ -76,10 +76,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-dealan.png", 
     tags: ["Go", "Docker", "AWS", "Jenkins", "Azure"],
-    description: "A scalable ride-hailing application built with a microservices architecture and cloud integration.",
+    description: "As the Backend & Microservices Architect, I engineered the distributed system architecture and robust API ecosystem for a deal aggregator platform building high performance backend services to power real time voucher distribution, dynamic campaigns, and secure redemption workflows.",
     details: {
-      businessImpact: "Designed a scalable micro-service ride-hailing platform that supports high-throughput trip matching, achieving sub-second latency under peak load.",
-      technicalDetails: "Core services written in Go, containerized with Docker, orchestrated via Kubernetes. CI/CD pipelines via Jenkins, and cloud services hosted on AWS & Azure (EKS, S3, Cosmos DB)."
+      businessImpact: "• Merchant Revenue Expansion: Designed a promotional management portal enabling local businesses to create, customize, and deploy time-sensitive deals, boosting local foot traffic and customer acquisition.\n\n• Voucher Governance & Abuse Prevention: Structured a secure single-use voucher ecosystem with real-time validation protocols to eliminate double-redemption risks and promotional fraud.\n\n• Hyperlocal Consumer Engagement: Defined business rules for location-aware deal discovery, enabling users to find and claim nearby offers based on real-time distance and preference filtering.\n\n• Campaign Performance Analytics: Established automated tracking dashboards for merchants to monitor campaign metrics, voucher conversion rates, and total revenue generated.",
+      technicalDetails: "Built a scalable full-stack promotional platform from scratch, handling dynamic campaign logic, payment gateway processing, QR code redemption verification, and API performance.\n\n• QR Code Redemption System: Implemented a real-time QR code generation and scanner engine using cryptographic token validation to authorize instant, secure voucher redemptions at merchant outlets.\n\n• Geospatial Query Optimization: Built location-based API endpoints utilizing database spatial indexes (e.g., Haversine formula / PostGIS) to serve high-performance nearby deal queries.\n\n• Role-Based Portal Access: Architected multi-tenant access control enforcing isolated access layers for Consumers, Merchant Admins, and Platform Super-Admins.\n\n• High-Concurrency Handling: Optimized database transaction locks and caching mechanisms to maintain system reliability during peak promotional events and flash sales."
     },
     links: {
       github: "https://github.com/shakilaaulia/Dealan",
@@ -302,7 +302,7 @@ export default function ProjectsSection() {
                   </button>
                 </div>
                 
-                <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4">
+                <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4 whitespace-pre-line text-sm sm:text-base">
                   {activeTab === 'business' && (
                     <p>{selectedProject.details.businessImpact}</p>
                   )}

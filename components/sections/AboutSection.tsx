@@ -127,10 +127,23 @@ export default function AboutSection() {
           </BorderGlow>
         </div>
 
-        <div ref={visualRef} className="lg:col-span-5 relative group">
-          <div className="absolute inset-0 bg-neon-purple/20 blur-[80px] rounded-full scale-75 group-hover:scale-110 transition-transform duration-1000 ease-out"></div>
-          <div className="aspect-[4/5] rounded-[2rem] overflow-hidden glass-panel relative z-10 p-2 transform group-hover:-translate-y-2 transition-transform duration-500">
-            <img src="/images/profile.png" alt="Profile" className="w-full h-full object-cover rounded-3xl grayscale group-hover:grayscale-0 transition-all duration-700" />
+        <div ref={visualRef} className="lg:col-span-5 relative group pl-4 pt-4 md:pl-6 md:pt-6">
+          <div className="absolute inset-0 bg-neon-purple/20 blur-[80px] rounded-full scale-75 group-hover:scale-110 transition-transform duration-1000 ease-out z-0"></div>
+          
+          {/* Offset Border Frame (Gold accent) */}
+          <div className="absolute top-0 left-0 w-[calc(100%-1rem)] h-[calc(100%-1rem)] md:w-[calc(100%-1.5rem)] md:h-[calc(100%-1.5rem)] border-2 border-[#D4AF37]/60 rounded-[2.5rem] z-0 transition-transform duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2"></div>
+          
+          {/* Dot Matrix Pattern */}
+          <div 
+            className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 z-0 transition-transform duration-500 group-hover:translate-y-2 group-hover:translate-x-2 opacity-50"
+            style={{ 
+              backgroundImage: 'radial-gradient(circle, #D4AF37 2px, transparent 2px)', 
+              backgroundSize: '16px 16px' 
+            }}
+          ></div>
+
+          <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden glass-panel relative z-10 p-2 transform group-hover:-translate-y-2 transition-transform duration-500 shadow-xl">
+            <img src="/images/profile.png" alt="Profile" className="w-full h-full object-cover rounded-[2rem] grayscale group-hover:grayscale-0 transition-all duration-700" />
           </div>
         </div>
       </div>
