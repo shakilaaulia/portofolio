@@ -13,30 +13,31 @@ interface PointerProps {
 export function Pointer({ children, className, name }: PointerProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [rect, setRect] = useState<DOMRect | null>(null)
   const [isInside, setIsInside] = useState<boolean>(false)
 
   useEffect(() => {
-    if (ref.current) {
-      setRect(ref.current.getBoundingClientRect())
+    const handleMouseMove = (e: MouseEvent) => {
+      x.set(e.clientX)
+      y.set(e.clientY)
+      if (!isInside) setIsInside(true)
     }
-  }, [])
+    const handleMouseLeave = () => setIsInside(false)
+    const handleMouseEnter = () => setIsInside(true)
+
+    window.addEventListener("mousemove", handleMouseMove)
+    document.addEventListener("mouseleave", handleMouseLeave)
+    document.addEventListener("mouseenter", handleMouseEnter)
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      document.removeEventListener("mouseenter", handleMouseEnter)
+    }
+  }, [x, y, isInside])
 
   return (
     <div
-      onMouseLeave={() => setIsInside(false)}
-      onMouseEnter={() => setIsInside(true)}
-      onMouseMove={(e: React.MouseEvent<HTMLDivElement>) => {
-        if (rect) {
-          const scrollX = window.scrollX
-          const scrollY = window.scrollY
-          x.set(e.clientX - rect.left + scrollX)
-          y.set(e.clientY - rect.top + scrollY)
-        }
-      }}
       style={{ cursor: "none" }}
-      ref={ref}
       className={cn("relative", className)}
     >
       <AnimatePresence>
@@ -56,7 +57,7 @@ interface FollowPointerProps {
 function FollowPointer({ x, y, name }: FollowPointerProps) {
   return (
     <motion.div
-      className="absolute z-50 h-4 w-4 rounded-full"
+      className="fixed z-[9999] h-4 w-4 rounded-full"
       style={{
         top: y,
         left: x,
