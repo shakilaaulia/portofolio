@@ -15,7 +15,10 @@ const featuredProjects = [
     category: "UI/UX Design",
     image: "/images/project-delta.png",
     tags: ["Figma", "Wireframing", "Prototyping"],
-    description: "Proyek desain UI/UX untuk aplikasi Deltanet, yang merupakan sistem billing Wi-Fi. Desain ini mencakup pembuatan wireframe dan prototipe interaktif untuk memastikan navigasi dan pengalaman pengguna yang optimal.",
+    details: {
+      businessImpact: "Meningkatkan efisiensi sistem penagihan Wi-Fi dengan antarmuka yang intuitif, mengurangi waktu yang dibutuhkan admin untuk melakukan manajemen pelanggan.",
+      technicalDetails: "Proses perancangan menggunakan metodologi design thinking, dimulai dari user research hingga prototyping interaktif di Figma untuk validasi alur pengguna."
+    },
     links: {
       figma: "https://www.figma.com/design/cQanoAyeyKEVfTGWol9NRj/PKL---Wifi-Net-Bill.?m=auto&t=Oik1JYiEPK0SOveA-6"
     }
@@ -26,7 +29,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-schedular.png",
     tags: ["Laravel", "PHP"],
-    description: "Aplikasi manajemen penjadwalan (Schedular) berbasis web yang dikembangkan menggunakan framework Laravel. Dirancang untuk memudahkan pengelolaan agenda dan waktu secara efisien.",
+    details: {
+      businessImpact: "Memfasilitasi organisasi tim dalam mengelola jadwal kerja agar lebih terstruktur dan menghindari konflik waktu.",
+      technicalDetails: "Dibangun menggunakan framework Laravel, menerapkan sistem CRUD, autentikasi user, dan manajemen database MySQL yang terintegrasi."
+    },
     links: {
       github: "https://github.com/shakilaaulia/schedular_laravel"
     }
@@ -37,7 +43,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-adopt.png",
     tags: ["React", "Node"],
-    description: "Platform AdoptMeow merupakan proyek yang bertujuan untuk mewadahi proses adopsi kucing. Platform ini mempertemukan hewan yang membutuhkan rumah dengan para calon adopter yang bertanggung jawab.",
+    details: {
+      businessImpact: "Meningkatkan angka adopsi kucing melalui platform yang mempertemukan pemilik tempat penampungan dengan calon adopter secara efektif.",
+      technicalDetails: "Aplikasi full-stack dengan antarmuka dinamis menggunakan React dan dukungan API backend Node.js untuk manajemen data kucing."
+    },
     links: {
       github: "https://github.com/shakilaaulia/AdoptMeow-Collab"
     }
@@ -48,7 +57,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-umkm.png",
     tags: ["React.js", "Node.js", "Supabase", "Vercel"],
-    description: "Sistem pemesanan makanan berbasis web untuk UMKM Seblak Mamah Zahwa. Dirancang untuk mendigitalisasi proses reservasi dan pemesanan menu secara real-time, mempermudah manajemen transaksi, serta memberikan pengalaman pengguna yang responsif.",
+    details: {
+      businessImpact: "Mendukung transformasi digital UMKM lokal dengan sistem pemesanan online yang mempercepat proses transaksi dan rekapitulasi penjualan.",
+      technicalDetails: "Memanfaatkan Supabase untuk backend-as-a-service, memberikan kemampuan real-time pada status pesanan serta deployment yang efisien di Vercel."
+    },
     links: {
       github: "https://github.com/shakilaaulia/seblak-web",
       demo: "https://seblakmamahzahwa.vercel.app/"
@@ -60,7 +72,10 @@ const featuredProjects = [
     category: "Web Application",
     image: "/images/project-dealan.png", 
     tags: ["Go", "Docker", "AWS", "Jenkins", "Azure"],
-    description: "Aplikasi ride-hailing dengan konsep arsitektur microservices dan integrasi cloud. Proyek ini dibangun dengan bahasa Go, menggunakan database postgre, memanfaatkan kontainer Docker, diotomatisasi melalui Jenkins, serta menggunakan layanan cloud Azure.",
+    details: {
+      businessImpact: "Menyediakan infrastruktur aplikasi ride-hailing yang skalabel dan handal untuk menangani permintaan pengguna secara simultan.",
+      technicalDetails: "Implementasi arsitektur microservices menggunakan bahasa Go, containerization dengan Docker, dan pipeline CI/CD menggunakan Jenkins di lingkungan cloud."
+    },
     links: {
       github: "https://github.com/shakilaaulia/Dealan",
       demo: "https://dealan-app.vercel.app/"
@@ -72,7 +87,10 @@ const featuredProjects = [
     category: "Machine Learning",
     image: "/images/project-ml.png", 
     tags: ["R", "Apriori"],
-    description: "Penerapan Algoritma Apriori untuk mengidentifikasi pola hubungan dan kombinasi korelasi antara bahan utama serta Bahan Tambahan Pangan (BTP) pada produk makanan kemasan menggunakan aturan asosiasi."
+    details: {
+      businessImpact: "Memberikan wawasan berharga bagi produsen makanan untuk memahami preferensi kombinasi bahan yang sering dibeli konsumen.",
+      technicalDetails: "Analisis data menggunakan bahasa R dengan penerapan algoritma Apriori untuk menemukan aturan asosiasi dan korelasi antar item produk."
+    }
   }
 ];
 
@@ -81,6 +99,7 @@ export default function ProjectsSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLElement | null)[]>([]);
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState<'business' | 'technical'>('business');
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -169,7 +188,10 @@ export default function ProjectsSection() {
           {featuredProjects.map((project, index) => (
             <button
               key={project.id}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => {
+                setSelectedProject(project);
+                setActiveTab('business');
+              }}
               ref={(el) => { cardsRef.current[index] = el; }}
               className="text-left group block min-w-[300px] md:min-w-[400px] lg:min-w-[450px] w-full md:w-[450px] rounded-[2rem] overflow-hidden glass-panel border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,106,0,0.15)] flex flex-col snap-center shrink-0"
             >
@@ -255,9 +277,30 @@ export default function ProjectsSection() {
                   <span className="text-sm font-mono text-neon-blue mb-2 block">{selectedProject.id} • {selectedProject.category}</span>
                   <h3 className="text-3xl md:text-4xl font-bold text-black/90 dark:text-white/90">{selectedProject.title}</h3>
                 </div>
+
+                {/* Tab navigation */}
+                <div className="flex border-b border-black/10 dark:border-white/10 mb-4">
+                  <button
+                    onClick={() => setActiveTab('business')}
+                    className={`px-4 py-2 -mb-px font-medium text-sm transition-colors ${activeTab === 'business' ? 'border-b-2 border-neon-orange text-neon-orange' : 'text-black/60 dark:text-white/60'}`}
+                  >
+                    Business Impact
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('technical')}
+                    className={`px-4 py-2 -mb-px font-medium text-sm transition-colors ${activeTab === 'technical' ? 'border-b-2 border-neon-orange text-neon-orange' : 'text-black/60 dark:text-white/60'}`}
+                  >
+                    Technical Details
+                  </button>
+                </div>
                 
                 <div className="text-black/60 dark:text-white/60 leading-relaxed space-y-4">
-                  <p>{selectedProject.description}</p>
+                  {activeTab === 'business' && (
+                    <p>{selectedProject.details.businessImpact}</p>
+                  )}
+                  {activeTab === 'technical' && (
+                    <p>{selectedProject.details.technicalDetails}</p>
+                  )}
                 </div>
                 
                 <div className="mt-2">
